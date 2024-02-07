@@ -88,7 +88,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <br />
+          
           <div className="flex justify-center">
             {letter && numbers && (
               <Image
