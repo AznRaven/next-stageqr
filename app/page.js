@@ -15,13 +15,21 @@ export default function Home() {
   };
 
   const stage = [];
+  const stage2 = [];
   const num = [];
+  const num2 = [];
 
-  for (var i = 97; i <= 122; i++) {
+  for (var i = 97; i <= 109; i++) {
     stage.push(String.fromCharCode(i));
   }
-  for (var i = 1; i <= 20; i++) {
+  for (var i = 110; i <= 122; i++) {
+    stage2.push(String.fromCharCode(i));
+  }
+  for (var i = 1; i <= 10; i++) {
     num.push(i);
+  }
+  for (var i = 11; i <= 20; i++) {
+    num2.push(i);
   }
 
   return (
@@ -45,25 +53,51 @@ export default function Home() {
                 letter={letter}
               />
             ))}
-          </div>
-          <div className="flex gap-5 mt-5 justify-center">
-            {num.map((x) => (
+          </div><br />
+          <div className="flex gap-5 mt-5">
+            {stage2.map((x) => (
+              // <button className="uppercase">{x}</button>
               <Button
                 key={x}
                 name={x}
-                handleClick={() => handleClick2(x)}
-                numbers={numbers}
+                handleClick={() => handleClick(x)}
+                letter={letter}
               />
             ))}
           </div>
           <br />
+          <div className="flex flex-col gap-5">
+            <div className="flex gap-5 mt-5 justify-center">
+              {num.map((x) => (
+                <Button
+                  key={x}
+                  name={x}
+                  handleClick={() => handleClick2(x)}
+                  numbers={numbers}
+                />
+              ))}
+            </div>
+            <div className="flex gap-5 mt-5 justify-center">
+              {num2.map((x) => (
+                <Button
+                  key={x}
+                  name={x}
+                  handleClick={() => handleClick2(x)}
+                  numbers={numbers}
+                />
+              ))}
+            </div>
+          </div>
+          <br />
           <div className="flex justify-center">
-            <Image
-              src={`/qr/${letter}/${letter}${numbers}.png`}
-              alt="QR Code"
-              width={400}
-              height={400}
-            />
+            {letter && numbers && (
+              <Image
+                src={`/qr/${letter}/${letter}${numbers}.png`}
+                alt="QR Code"
+                width={400}
+                height={400}
+              />
+            )}
           </div>
         </div>
       </div>
