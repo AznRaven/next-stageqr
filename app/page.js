@@ -43,7 +43,7 @@ export default function Home() {
         <h1 className="text-center mb-20">Stage QR</h1>
 
         <div>
-          <div className="flex gap-2 mt-5">
+          <div className="flex  mt-5">
             {stage.map((x) => (
               // <button className="uppercase">{x}</button>
               <Button
@@ -54,7 +54,7 @@ export default function Home() {
               />
             ))}
           </div><br />
-          <div className="flex gap-2 mt-5">
+          <div className="flex  mt-5">
             {stage2.map((x) => (
               // <button className="uppercase">{x}</button>
               <Button
@@ -67,7 +67,7 @@ export default function Home() {
           </div>
           <br />
           <div className="flex flex-col gap-5">
-            <div className="flex gap-2 mt-5 justify-center">
+            <div className="flex  mt-5 justify-center">
               {num.map((x) => (
                 <Button
                   key={x}
@@ -77,7 +77,7 @@ export default function Home() {
                 />
               ))}
             </div>
-            <div className="flex gap-2 mt-5 justify-center">
+            <div className="flex  mt-5 justify-center">
               {num2.map((x) => (
                 <Button
                   key={x}
