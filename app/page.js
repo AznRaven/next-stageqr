@@ -40,7 +40,7 @@ export default function Home() {
           {numbers}
         </div> */}
 
-        <h1 className="text-center mb-20">Stage QR</h1>
+        <h1 className="text-center mb-15">Stage QR</h1>
 
         <div>
           <div className="flex  mt-5">
