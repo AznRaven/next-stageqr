@@ -59,7 +59,7 @@ export default function Home() {
         <h1 className="text-center mb-10">Stage QR</h1>
 
         <div className="grid items-center justify-center h-fit ">
-          <div className="h-full grid-rows-4 space-y-2">
+          <div className="h-full grid-rows-4 space-y-2 px-2">
             {/* A-M */}
             <div className="grid-col  space-x-2">
               {stage.map((x) => (
