@@ -1,11 +1,12 @@
 "use client";
 import Button from "@/components/Button";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const [letter, setLetter] = useState("");
-  const [numbers, setNumbers] = useState([]);
+  const [numbers, setNumbers] = useState("");
+  const [imageExists, setImageExists] = useState(false);
 
   const handleClick = (x) => {
     setLetter(x);
@@ -32,6 +33,21 @@ export default function Home() {
     num2.push(i);
   }
 
+  useEffect(() => {
+    const checkImageExists = async () => {
+      try {
+        setImageExists(false);
+        const response = await fetch(`/qr/${letter}/${letter}${numbers}.png`);
+        if (response.ok) {
+          setImageExists(true);
+        }
+      } catch (error) {
+        setImageExists(false);
+      }
+    };
+    checkImageExists();
+  }, [letter, numbers]);
+
   return (
     <main className="flex justify-center h-screen p-10">
       <div>
@@ -42,32 +58,34 @@ export default function Home() {
 
         <h1 className="text-center mb-10">Stage QR</h1>
 
-        <div>
-          <div className="flex">
-            {stage.map((x) => (
-              // <button className="uppercase">{x}</button>
-              <Button
-                key={x}
-                name={x}
-                handleClick={() => handleClick(x)}
-                letter={letter}
-              />
-            ))}
-          </div><br />
-          <div className="flex">
-            {stage2.map((x) => (
-              // <button className="uppercase">{x}</button>
-              <Button
-                key={x}
-                name={x}
-                handleClick={() => handleClick(x)}
-                letter={letter}
-              />
-            ))}
-          </div>
-          <br />
-          <div className="flex flex-col gap-5">
-            <div className="flex justify-center">
+        <div className="flex md:flex-col items-center justify-center border-8 h-fit">
+          <div className="h-full grid grid-cols-4 border-8">
+            {/* A-M */}
+            <div className="grid h-full ">
+              {stage.map((x) => (
+                // <button className="uppercase">{x}</button>
+                <Button
+                  key={x}
+                  name={x}
+                  handleClick={() => handleClick(x)}
+                  letter={letter}
+                />
+              ))}
+            </div>
+            {/* N-Z */}
+            <div className="grid">
+              {stage2.map((x) => (
+                // <button className="uppercase">{x}</button>
+                <Button
+                  key={x}
+                  name={x}
+                  handleClick={() => handleClick(x)}
+                  letter={letter}
+                />
+              ))}
+            </div>
+            {/* 1-13 */}
+            <div className="grid">
               {num.map((x) => (
                 <Button
                   key={x}
@@ -77,7 +95,8 @@ export default function Home() {
                 />
               ))}
             </div>
-            <div className="flex justify-center">
+            {/* 14-26 */}
+            <div className="grid">
               {num2.map((x) => (
                 <Button
                   key={x}
@@ -87,16 +106,19 @@ export default function Home() {
                 />
               ))}
             </div>
+            <div className="flex flex-col"></div>
           </div>
           {/* Image */}
           <div className="flex justify-center">
-            {letter && numbers && (
+            {imageExists ? (
               <Image
                 src={`/qr/${letter}/${letter}${numbers}.png`}
                 alt="QR Code"
                 width={400}
                 height={400}
               />
+            ) : (
+              letter !== "" && numbers !== "" && "Image does not exist"
             )}
           </div>
         </div>
