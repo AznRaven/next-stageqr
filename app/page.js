@@ -58,10 +58,10 @@ export default function Home() {
 
         <h1 className="text-center mb-10">Stage QR</h1>
 
-        <div className="grid grid-cols-2 md:grid-cols-1 items-center justify-center h-fit border container">
-          <div className="h-full grid grid-cols-4 space-x-1">
+        <div className="grid items-center justify-center h-fit ">
+          <div className="h-full grid-rows-4 space-y-2">
             {/* A-M */}
-            <div className="grid space-y-5">
+            <div className="grid-col  space-x-2">
               {stage.map((x) => (
                 // <button className="uppercase">{x}</button>
                 <Button
@@ -73,7 +73,7 @@ export default function Home() {
               ))}
             </div>
             {/* N-Z */}
-            <div className="grid space-y-5">
+            <div className="grid-col  space-x-2">
               {stage2.map((x) => (
                 // <button className="uppercase">{x}</button>
                 <Button
@@ -85,7 +85,7 @@ export default function Home() {
               ))}
             </div>
             {/* 1-13 */}
-            <div className="grid space-y-5">
+            <div className="grid-col  space-x-2">
               {num.map((x) => (
                 <Button
                   key={x}
@@ -96,7 +96,7 @@ export default function Home() {
               ))}
             </div>
             {/* 14-26 */}
-            <div className="grid space-y-5">
+            <div className="grid-col  space-x-2">
               {num2.map((x) => (
                 <Button
                   key={x}
@@ -109,7 +109,7 @@ export default function Home() {
             <div className="flex flex-col"></div>
           </div>
           {/* Image */}
-          <div className="">
+          <div className="grid place-content-center h-fit">
             {imageExists ? (
               <Image
                 src={`/qr/${letter}/${letter}${numbers}.png`}
