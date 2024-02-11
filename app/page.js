@@ -61,7 +61,7 @@ export default function Home() {
         <div className="grid items-center justify-center h-fit ">
           <div className="h-full grid-rows-4 space-y-2 px-2">
             {/* A-M */}
-            <div className="grid-col  space-x-2">
+            <div className="grid-col  space-x-1">
               {stage.map((x) => (
                 // <button className="uppercase">{x}</button>
                 <Button
@@ -73,7 +73,7 @@ export default function Home() {
               ))}
             </div>
             {/* N-Z */}
-            <div className="grid-col  space-x-2">
+            <div className="grid-col  space-x-1">
               {stage2.map((x) => (
                 // <button className="uppercase">{x}</button>
                 <Button
@@ -85,7 +85,7 @@ export default function Home() {
               ))}
             </div>
             {/* 1-13 */}
-            <div className="grid-col  space-x-2">
+            <div className="grid-col  space-x-1">
               {num.map((x) => (
                 <Button
                   key={x}
@@ -96,7 +96,7 @@ export default function Home() {
               ))}
             </div>
             {/* 14-26 */}
-            <div className="grid-col  space-x-2">
+            <div className="grid-col  space-x-1">
               {num2.map((x) => (
                 <Button
                   key={x}
