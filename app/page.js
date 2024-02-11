@@ -49,7 +49,7 @@ export default function Home() {
   }, [letter, numbers]);
 
   return (
-    <main className="flex justify-center h-screen p-10">
+    <main className="flex justify-center h-screen md:p10">
       <div>
         {/* <div>
           {letter}
@@ -58,7 +58,7 @@ export default function Home() {
 
         <h1 className="text-center mb-10">Stage QR</h1>
 
-        <div className="grid grid-cols-2 md:grid-cols-1 items-center justify-center h-fit">
+        <div className="grid grid-cols-2 md:grid-cols-1 items-center justify-center h-fit border container">
           <div className="h-full grid grid-cols-4 space-x-3">
             {/* A-M */}
             <div className="grid space-y-5">
