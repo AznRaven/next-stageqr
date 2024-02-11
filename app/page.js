@@ -59,9 +59,9 @@ export default function Home() {
         <h1 className="text-center mb-10">Stage QR</h1>
 
         <div className="flex md:flex-col items-center justify-center border-8 h-fit">
-          <div className="h-full grid grid-cols-4 border-8">
+          <div className="h-full grid grid-cols-4 space-x-3">
             {/* A-M */}
-            <div className="grid h-full ">
+            <div className="grid space-y-5">
               {stage.map((x) => (
                 // <button className="uppercase">{x}</button>
                 <Button
@@ -73,7 +73,7 @@ export default function Home() {
               ))}
             </div>
             {/* N-Z */}
-            <div className="grid">
+            <div className="grid space-y-5">
               {stage2.map((x) => (
                 // <button className="uppercase">{x}</button>
                 <Button
@@ -85,7 +85,7 @@ export default function Home() {
               ))}
             </div>
             {/* 1-13 */}
-            <div className="grid">
+            <div className="grid space-y-5">
               {num.map((x) => (
                 <Button
                   key={x}
@@ -96,7 +96,7 @@ export default function Home() {
               ))}
             </div>
             {/* 14-26 */}
-            <div className="grid">
+            <div className="grid space-y-5">
               {num2.map((x) => (
                 <Button
                   key={x}
@@ -109,13 +109,13 @@ export default function Home() {
             <div className="flex flex-col"></div>
           </div>
           {/* Image */}
-          <div className="flex justify-center">
+          <div className="">
             {imageExists ? (
               <Image
                 src={`/qr/${letter}/${letter}${numbers}.png`}
                 alt="QR Code"
-                width={400}
-                height={400}
+                width={300}
+                height={300}
               />
             ) : (
               letter !== "" && numbers !== "" && "Image does not exist"
