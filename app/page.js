@@ -25,10 +25,10 @@ export default function Home() {
   for (var i = 110; i <= 122; i++) {
     stage2.push(String.fromCharCode(i));
   }
-  for (var i = 1; i <= 10; i++) {
+  for (var i = 1; i <= 13; i++) {
     num.push(i);
   }
-  for (var i = 11; i <= 20; i++) {
+  for (var i = 14; i <= 26; i++) {
     num2.push(i);
   }
 
@@ -40,10 +40,10 @@ export default function Home() {
           {numbers}
         </div> */}
 
-        <h1 className="text-center mb-15">Stage QR</h1>
+        <h1 className="text-center mb-10">Stage QR</h1>
 
         <div>
-          <div className="flex  mt-5">
+          <div className="flex">
             {stage.map((x) => (
               // <button className="uppercase">{x}</button>
               <Button
@@ -54,7 +54,7 @@ export default function Home() {
               />
             ))}
           </div><br />
-          <div className="flex  mt-5">
+          <div className="flex">
             {stage2.map((x) => (
               // <button className="uppercase">{x}</button>
               <Button
@@ -67,7 +67,7 @@ export default function Home() {
           </div>
           <br />
           <div className="flex flex-col gap-5">
-            <div className="flex  mt-5 justify-center">
+            <div className="flex justify-center">
               {num.map((x) => (
                 <Button
                   key={x}
@@ -77,7 +77,7 @@ export default function Home() {
                 />
               ))}
             </div>
-            <div className="flex  mt-5 justify-center">
+            <div className="flex justify-center">
               {num2.map((x) => (
                 <Button
                   key={x}
@@ -88,7 +88,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-          
+          {/* Image */}
           <div className="flex justify-center">
             {letter && numbers && (
               <Image
