@@ -58,7 +58,7 @@ export default function Home() {
 
         <h1 className="text-center mb-10">Stage QR</h1>
 
-        <div className="flex md:flex-col items-center justify-center border-8 h-fit">
+        <div className="flex md:flex-col items-center justify-center h-fit">
           <div className="h-full grid grid-cols-4 space-x-3">
             {/* A-M */}
             <div className="grid space-y-5">
