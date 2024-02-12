@@ -36,10 +36,11 @@ export default function Home() {
   useEffect(() => {
     const checkImageExists = async () => {
       try {
-        setImageExists(false);
         const response = await fetch(`/qr/${letter}/${letter}${numbers}.png`);
         if (response.ok) {
           setImageExists(true);
+        } else {
+          setImageExists(false);
         }
       } catch (error) {
         setImageExists(false);
@@ -64,13 +65,15 @@ export default function Home() {
             <div className="grid-col  space-x-1 md:space-x-5">
               {stage.map((x) => (
                 // <button className="uppercase">{x}</button>
-                <Button
-                className='hover:border border-red-500'
-                  key={x}
-                  name={x}
-                  handleClick={() => handleClick(x)}
-                  letter={letter}
-                />
+                x !== 'i' && (
+                  <Button
+                    className='hover:border border-red-500'
+                    key={x}
+                    name={x}
+                    handleClick={() => handleClick(x)}
+                    letter={letter}
+                  />
+                )
               ))}
             </div>
             {/* N-Z */}
