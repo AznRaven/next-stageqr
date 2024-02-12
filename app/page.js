@@ -56,15 +56,16 @@ export default function Home() {
           {numbers}
         </div> */}
 
-        <h1 className="text-center mb-10">Stage QR</h1>
+        <h1 className="text-center mb-10 font-bold text-2xl mt-5">Stage QR</h1>
 
         <div className="grid items-center justify-center h-fit ">
           <div className="h-full grid-rows-4 space-y-2 px-2">
             {/* A-M */}
-            <div className="grid-col  space-x-1">
+            <div className="grid-col  space-x-1 md:space-x-5">
               {stage.map((x) => (
                 // <button className="uppercase">{x}</button>
                 <Button
+                className='hover:border border-red-500'
                   key={x}
                   name={x}
                   handleClick={() => handleClick(x)}
@@ -73,7 +74,7 @@ export default function Home() {
               ))}
             </div>
             {/* N-Z */}
-            <div className="grid-col  space-x-1">
+            <div className="grid-col  space-x-1 md:space-x-5">
               {stage2.map((x) => (
                 // <button className="uppercase">{x}</button>
                 <Button
@@ -85,7 +86,7 @@ export default function Home() {
               ))}
             </div>
             {/* 1-13 */}
-            <div className="grid-col  space-x-1">
+            <div className="grid-col  space-x-1 md:space-x-5">
               {num.map((x) => (
                 <Button
                   key={x}
@@ -96,7 +97,7 @@ export default function Home() {
               ))}
             </div>
             {/* 14-26 */}
-            <div className="grid-col  space-x-1">
+            <div className="grid-col  space-x-1 md:space-x-5">
               {num2.map((x) => (
                 <Button
                   key={x}
