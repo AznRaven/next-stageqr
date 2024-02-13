@@ -20,7 +20,7 @@ export default function Home() {
   const num = [];
   const num2 = [];
 
-  const allLetters = []
+  const allLetters = [];
   for (var i = 97; i <= 122; i++) {
     allLetters.push(String.fromCharCode(i));
   }
@@ -55,7 +55,7 @@ export default function Home() {
   }, [letter, numbers]);
 
   return (
-    <main className="flex justify-center h-screen md:p10">
+    <main className="flex justify-center h-screen md:p10 p-4 ">
       <div>
         {/* <div>
           {letter}
@@ -146,12 +146,12 @@ export default function Home() {
           </div>
         </div>
         {/* All Letters */}
-        <div>
-          <div class="border rounded-md">
-            <h5 class="bg-slate-200 p-2 font-bold text-lg">Letters</h5>
-            <div class="p-2">
-              <h5 class="card-title">Select Staging Letter</h5>
-              <p class="card-text">
+
+        <div class="border rounded-md">
+          <h5 class="bg-slate-200 p-2 font-bold text-lg">Letters</h5>
+          <div class="p-2">
+            <h5 class="card-title">Select Staging Letter</h5>
+            <p class="card-text grid grid-cols-10 gap-1">
               {allLetters.map(
                 (x) =>
                   x !== "i" &&
@@ -169,13 +169,13 @@ export default function Home() {
                     />
                   )
               )}
-              </p>
-              <a href="#" class="btn btn-primary">
-                Go somewhere
-              </a>
-            </div>
+            </p>
+            <a href="#" class="btn btn-primary">
+              Go somewhere
+            </a>
           </div>
         </div>
+
         {/* All Numbers */}
         <div></div>
       </div>
