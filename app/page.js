@@ -93,7 +93,7 @@ export default function Home() {
             </h5>
             <div class="p-2">
               {/* <h5 class="card-title">Select Staging Letter</h5> */}
-              <p class="card-text grid grid-cols-10 gap-5">
+              <p class="card-text grid grid-cols-10 gap-x-5 gap-y-2">
                 {allLetters.map(
                   (x) =>
                     x !== "i" &&
@@ -125,7 +125,7 @@ export default function Home() {
             </h5>
             <div class="p-2">
               {/* <h5 class="card-title">Select Staging Letter</h5> */}
-              <p class="card-text grid grid-cols-10 gap-5">
+              <p class="card-text grid grid-cols-10  gap-x-5 gap-y-2">
                 {allNumbers.map((x) => (
                   <Button
                     key={x}
