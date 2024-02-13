@@ -20,6 +20,11 @@ export default function Home() {
   const num = [];
   const num2 = [];
 
+  const allLetters = []
+  for (var i = 97; i <= 122; i++) {
+    allLetters.push(String.fromCharCode(i));
+  }
+
   for (var i = 97; i <= 109; i++) {
     stage.push(String.fromCharCode(i));
   }
@@ -63,30 +68,44 @@ export default function Home() {
           <div className="h-full grid-rows-4 space-y-2 px-2">
             {/* A-M */}
             <div className="grid-col  space-x-1 md:space-x-5">
-              {stage.map((x) => (
-                // <button className="uppercase">{x}</button>
-                x !== 'i' && (
-                  <Button
-                    className='hover:border border-red-500'
-                    key={x}
-                    name={x}
-                    handleClick={() => handleClick(x)}
-                    letter={letter}
-                  />
-                )
-              ))}
+              {stage.map(
+                (x) =>
+                  // <button className="uppercase">{x}</button>
+                  x !== "i" &&
+                  x !== "e" &&
+                  x !== "m" &&
+                  x !== "o" &&
+                  x !== "u" &&
+                  x !== "w" && (
+                    <Button
+                      className="hover:border border-red-500"
+                      key={x}
+                      name={x}
+                      handleClick={() => handleClick(x)}
+                      letter={letter}
+                    />
+                  )
+              )}
             </div>
             {/* N-Z */}
             <div className="grid-col  space-x-1 md:space-x-5">
-              {stage2.map((x) => (
-                // <button className="uppercase">{x}</button>
-                <Button
-                  key={x}
-                  name={x}
-                  handleClick={() => handleClick(x)}
-                  letter={letter}
-                />
-              ))}
+              {stage2.map(
+                (x) =>
+                  x !== "i" &&
+                  x !== "e" &&
+                  x !== "m" &&
+                  x !== "o" &&
+                  x !== "u" &&
+                  x !== "w" && (
+                    // <button className="uppercase">{x}</button>
+                    <Button
+                      key={x}
+                      name={x}
+                      handleClick={() => handleClick(x)}
+                      letter={letter}
+                    />
+                  )
+              )}
             </div>
             {/* 1-13 */}
             <div className="grid-col  space-x-1 md:space-x-5">
@@ -126,6 +145,39 @@ export default function Home() {
             )}
           </div>
         </div>
+        {/* All Letters */}
+        <div>
+          <div class="border rounded-md">
+            <h5 class="bg-slate-200 p-2 font-bold text-lg">Letters</h5>
+            <div class="p-2">
+              <h5 class="card-title">Select Staging Letter</h5>
+              <p class="card-text">
+              {allLetters.map(
+                (x) =>
+                  x !== "i" &&
+                  x !== "e" &&
+                  x !== "m" &&
+                  x !== "o" &&
+                  x !== "u" &&
+                  x !== "w" && (
+                    // <button className="uppercase">{x}</button>
+                    <Button
+                      key={x}
+                      name={x}
+                      handleClick={() => handleClick(x)}
+                      letter={letter}
+                    />
+                  )
+              )}
+              </p>
+              <a href="#" class="btn btn-primary">
+                Go somewhere
+              </a>
+            </div>
+          </div>
+        </div>
+        {/* All Numbers */}
+        <div></div>
       </div>
     </main>
   );
