@@ -24,6 +24,10 @@ export default function Home() {
   for (var i = 97; i <= 122; i++) {
     allLetters.push(String.fromCharCode(i));
   }
+  const allNumbers = [];
+  for (var i = 1; i <= 40; i++) {
+    allNumbers.push(i);
+  }
 
   for (var i = 97; i <= 109; i++) {
     stage.push(String.fromCharCode(i));
@@ -62,122 +66,81 @@ export default function Home() {
           {numbers}
         </div> */}
 
-        <h1 className="text-center mb-10 font-bold text-2xl mt-5">Stage QR</h1>
+        <h1 className="text-center font-bold text-2xl mt-5">Stage QR</h1>
 
-        <div className="grid items-center justify-center h-fit ">
-          <div className="h-full grid-rows-4 space-y-2 px-2">
-            {/* A-M */}
-            <div className="grid-col  space-x-1 md:space-x-5">
-              {stage.map(
-                (x) =>
-                  // <button className="uppercase">{x}</button>
-                  x !== "i" &&
-                  x !== "e" &&
-                  x !== "m" &&
-                  x !== "o" &&
-                  x !== "u" &&
-                  x !== "w" && (
-                    <Button
-                      className="hover:border border-red-500"
-                      key={x}
-                      name={x}
-                      handleClick={() => handleClick(x)}
-                      letter={letter}
-                    />
-                  )
-              )}
-            </div>
-            {/* N-Z */}
-            <div className="grid-col  space-x-1 md:space-x-5">
-              {stage2.map(
-                (x) =>
-                  x !== "i" &&
-                  x !== "e" &&
-                  x !== "m" &&
-                  x !== "o" &&
-                  x !== "u" &&
-                  x !== "w" && (
-                    // <button className="uppercase">{x}</button>
-                    <Button
-                      key={x}
-                      name={x}
-                      handleClick={() => handleClick(x)}
-                      letter={letter}
-                    />
-                  )
-              )}
-            </div>
-            {/* 1-13 */}
-            <div className="grid-col  space-x-1 md:space-x-5">
-              {num.map((x) => (
-                <Button
-                  key={x}
-                  name={x}
-                  handleClick={() => handleClick2(x)}
-                  numbers={numbers}
-                />
-              ))}
-            </div>
-            {/* 14-26 */}
-            <div className="grid-col  space-x-1 md:space-x-5">
-              {num2.map((x) => (
-                <Button
-                  key={x}
-                  name={x}
-                  handleClick={() => handleClick2(x)}
-                  numbers={numbers}
-                />
-              ))}
-            </div>
-            <div className="flex flex-col"></div>
-          </div>
+        <div className="grid gap-2">
           {/* Image */}
-          <div className="grid place-content-center h-fit">
+          <div className="grid h-72 overflow-hidden justify-center">
             {imageExists ? (
-              <Image
-                src={`/qr/${letter}/${letter}${numbers}.png`}
-                alt="QR Code"
-                width={300}
-                height={300}
-              />
+              <div className="">
+
+                <Image
+                  src={`/qr/${letter}/${letter}${numbers}.png`}
+                  alt="QR Code"
+                  width={300}
+                  height={300}
+                />
+              </div>
             ) : (
               letter !== "" && numbers !== "" && "Image does not exist"
             )}
           </div>
-        </div>
-        {/* All Letters */}
+          {/* All Letters */}
 
-        <div class="border rounded-md">
-          <h5 class="bg-slate-200 p-2 font-bold text-lg">Letters</h5>
-          <div class="p-2">
-            <h5 class="card-title">Select Staging Letter</h5>
-            <p class="card-text grid grid-cols-10 gap-1">
-              {allLetters.map(
-                (x) =>
-                  x !== "i" &&
-                  x !== "e" &&
-                  x !== "m" &&
-                  x !== "o" &&
-                  x !== "u" &&
-                  x !== "w" && (
-                    // <button className="uppercase">{x}</button>
-                    <Button
-                      key={x}
-                      name={x}
-                      handleClick={() => handleClick(x)}
-                      letter={letter}
-                    />
-                  )
-              )}
-            </p>
-            <a href="#" class="btn btn-primary">
+          <div class="rounded-md">
+            <h5 class="bg-slate-200 p-2 font-bold text-lg">
+              Select Staging Letter
+            </h5>
+            <div class="p-2">
+              {/* <h5 class="card-title">Select Staging Letter</h5> */}
+              <p class="card-text grid grid-cols-10 gap-1">
+                {allLetters.map(
+                  (x) =>
+                    x !== "i" &&
+                    x !== "e" &&
+                    x !== "m" &&
+                    x !== "o" &&
+                    x !== "u" &&
+                    x !== "w" && (
+                      // <button className="uppercase">{x}</button>
+                      <Button
+                        key={x}
+                        name={x}
+                        handleClick={() => handleClick(x)}
+                        letter={letter}
+                      />
+                    )
+                )}
+              </p>
+              {/* <a href="#" class="btn btn-primary">
               Go somewhere
-            </a>
+            </a> */}
+            </div>
+          </div>
+
+          {/* All Numbers */}
+          <div class="border rounded-md">
+            <h5 class="bg-slate-200 p-2 font-bold text-lg">
+              Select Staging Number
+            </h5>
+            <div class="p-2">
+              {/* <h5 class="card-title">Select Staging Letter</h5> */}
+              <p class="card-text grid grid-cols-10 gap-1">
+                {allNumbers.map((x) => (
+                  <Button
+                    key={x}
+                    name={x}
+                    handleClick={() => handleClick2(x)}
+                    numbers={numbers}
+                  />
+                ))}
+              </p>
+              {/* <a href="#" class="btn btn-primary">
+              Go somewhere
+            </a> */}
+            </div>
           </div>
         </div>
-
-        {/* All Numbers */}
-        <div></div>
       </div>
     </main>
   );
