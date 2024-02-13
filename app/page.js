@@ -87,13 +87,13 @@ export default function Home() {
           </div>
           {/* All Letters */}
 
-          <div class="rounded-md">
+          <div class="border rounded-md">
             <h5 class="bg-slate-200 p-2 font-bold text-lg">
               Select Staging Letter
             </h5>
             <div class="p-2">
               {/* <h5 class="card-title">Select Staging Letter</h5> */}
-              <p class="card-text grid grid-cols-10 gap-1">
+              <p class="card-text grid grid-cols-10 gap-5">
                 {allLetters.map(
                   (x) =>
                     x !== "i" &&
@@ -125,7 +125,7 @@ export default function Home() {
             </h5>
             <div class="p-2">
               {/* <h5 class="card-title">Select Staging Letter</h5> */}
-              <p class="card-text grid grid-cols-10 gap-1">
+              <p class="card-text grid grid-cols-10 gap-5">
                 {allNumbers.map((x) => (
                   <Button
                     key={x}
