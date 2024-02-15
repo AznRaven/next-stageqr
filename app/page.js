@@ -54,7 +54,7 @@ export default function Home() {
           {/* Image */}
           <div className="grid h-52 overflow-hidden justify-center  relative ">
             {imageExists ? (
-              <div className="absolute right-0 -top-10 m-auto left-1/2 -translate-x-1/2  w-[290px]">
+              <div className="absolute -top-10 m-auto left-1/2 -translate-x-1/2  w-[290px]">
 
                 <Image
                   src={`/qr/${letter}/${letter}${numbers}.png`}
