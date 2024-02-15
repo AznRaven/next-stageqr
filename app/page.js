@@ -50,15 +50,15 @@ export default function Home() {
 
         <h1 className="text-center font-bold text-2xl mt-5 mb-0">Stage QR</h1>
 
-        <div className="grid gap-2">
+        <div className="grid gap-2 ">
           {/* Image */}
-          <div className="grid h-56 overflow-hidden justify-center  relative">
+          <div className="grid h-56 overflow-hidden justify-center  relative border">
             {imageExists ? (
-              <div className="absolute left-28 -top-10 ">
+              <div className="absolute right-0 -top-10 m-auto w-100 h-100 left-1/2 -translate-x-1/2">
 
                 <Image
                   src={`/qr/${letter}/${letter}${numbers}.png`}
-                  alt="QR Code"
+                  alt="QR Codes"
                   width={300}
                   height={300}
                 />
