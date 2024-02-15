@@ -52,7 +52,7 @@ export default function Home() {
 
         <div className="grid gap-2 ">
           {/* Image */}
-          <div className="grid h-56 overflow-hidden justify-center  relative border">
+          <div className="grid h-52 overflow-hidden justify-center  relative border">
             {imageExists ? (
               <div className="absolute right-0 -top-10 m-auto w-100 h-100 left-1/2 -translate-x-1/2">
 
