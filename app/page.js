@@ -15,31 +15,13 @@ export default function Home() {
     setNumbers(x);
   };
 
-  const stage = [];
-  const stage2 = [];
-  const num = [];
-  const num2 = [];
-
-  const allLetters = [];
+  const stageLetter = [];
   for (var i = 97; i <= 122; i++) {
-    allLetters.push(String.fromCharCode(i));
+    stageLetter.push(String.fromCharCode(i));
   }
-  const allNumbers = [];
+  const stageNumber = [];
   for (var i = 1; i <= 40; i++) {
-    allNumbers.push(i);
-  }
-
-  for (var i = 97; i <= 109; i++) {
-    stage.push(String.fromCharCode(i));
-  }
-  for (var i = 110; i <= 122; i++) {
-    stage2.push(String.fromCharCode(i));
-  }
-  for (var i = 1; i <= 13; i++) {
-    num.push(i);
-  }
-  for (var i = 14; i <= 26; i++) {
-    num2.push(i);
+    stageNumber.push(i);
   }
 
   useEffect(() => {
@@ -94,7 +76,7 @@ export default function Home() {
             <div class="p-2">
               {/* <h5 class="card-title">Select Staging Letter</h5> */}
               <p class="card-text grid grid-cols-10 gap-x-5 gap-y-2">
-                {allLetters.map(
+                {stageLetter.map(
                   (x) =>
                     x !== "i" &&
                     x !== "e" &&
@@ -126,7 +108,7 @@ export default function Home() {
             <div class="p-2">
               {/* <h5 class="card-title">Select Staging Letter</h5> */}
               <p class="card-text grid grid-cols-10  gap-x-5 gap-y-2">
-                {allNumbers.map((x) => (
+                {stageNumber.map((x) => (
                   <Button
                     key={x}
                     name={x}
