@@ -52,7 +52,7 @@ export default function Home() {
 
         <div className="grid gap-2 ">
           {/* Image */}
-          <div className="grid h-52 overflow-hidden justify-center  relative border">
+          <div className="grid h-52 overflow-hidden justify-center  relative ">
             {imageExists ? (
               <div className="absolute right-0 -top-10 m-auto w-100 h-100 left-1/2 -translate-x-1/2">
 
@@ -75,7 +75,7 @@ export default function Home() {
             </h5>
             <div class="p-2">
               {/* <h5 class="card-title">Select Staging Letter</h5> */}
-              <p class="card-text grid grid-cols-10 gap-x-5 gap-y-2">
+              <p class="card-text grid grid-cols-10 gap-x-5 gap-y-2 px-2">
                 {stageLetter.map(
                   (x) =>
                     x !== "i" &&
@@ -107,7 +107,7 @@ export default function Home() {
             </h5>
             <div class="p-2">
               {/* <h5 class="card-title">Select Staging Letter</h5> */}
-              <p class="card-text grid grid-cols-10  gap-x-5 gap-y-2">
+              <p class="card-text grid grid-cols-10  gap-x-5 gap-y-2 px-2">
                 {stageNumber.map((x) => (
                   <Button
                     key={x}
