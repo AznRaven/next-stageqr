@@ -48,11 +48,11 @@ export default function Home() {
           {numbers}
         </div> */}
 
-        <h1 className="text-center font-bold text-2xl mt-5">Stage QR</h1>
+        <h1 className="text-center font-bold text-2xl mt-5 mb-0">Stage QR</h1>
 
         <div className="grid gap-2">
           {/* Image */}
-          <div className="grid h-72 overflow-hidden justify-center">
+          <div className="grid h-64 overflow-hidden justify-center">
             {imageExists ? (
               <div className="">
 
